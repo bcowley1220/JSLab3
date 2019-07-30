@@ -1,11 +1,4 @@
 "use strict";
-// TODO List:
-// TODO Add display method; must update the DOM to reflect all the contacts
-// TODO call display when the page first loads
-// TODO create contact card class in JS and css
-// TODO create delete button on each card that will call deletAt method, then call DOM to update display
-// Create form page
-// TODO when form is submitted, call add method on addressBook, call DOM for update
 
 // Scripts below from other file
 // class AddressBook {
@@ -57,7 +50,7 @@ function displayContacts() {
   document.querySelector(".infoContainer").innerHTML = "";
   newContacts.forEach((contact, index) => {
     const div = document.createElement("div");
-    div.setAttribute("class", "card");
+    div.classList.add("card");
     div.innerHTML = `
     <p>Name: ${contact.Name}</p>
     <p>Email: ${contact.Email}</p>
@@ -80,3 +73,13 @@ function handleDelete(event) {
 document
   .querySelector(".infoContainer")
   .addEventListener("click", handleDelete);
+
+// TODO List:
+// Add display method; must update the DOM to reflect all the contacts
+// TODO call display when the page first loads
+// create contact card class in JS and css
+// TODO make trash can button out of what is there now
+// Create form page
+// TODO when form is submitted, call add method on addressBook, call DOM for update
+// TODO wrap functions into a method
+// TODO create a method that will reset the form to default
